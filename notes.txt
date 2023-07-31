@@ -1,0 +1,15 @@
+input:
+- los numeros pueden contener signo
+- todo el input puede estar entrecomillado
+
+
+TO-DO:
+- implementar la lógica del stack
+	- implementar stack_init 
+- implementar las instrucciones de operaciones de stack
+- implementar el parser
+	- gestionar errores metidos por el usuario
+	- que devuelva la lista con el stack
+- 
+
+https://www.youtube.com/watch?v=OaG81sDEpVk 13:30

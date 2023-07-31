@@ -26,9 +26,13 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@echo "$(COLOUR_BLUE)compiling libft!$(NO_COLOUR)"
 	@make -s -C $(LIBFT_DIR)
-	@echo "$(COLOUR_BLUE)compiling puwsh_swap!$(NO_COLOUR)"
-	#como compilar????
+	@echo "$(COLOUR_BLUE)compiling push_swap!$(NO_COLOUR)"
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 	@echo "$(COLOUR_GREEN)compiled!$(NO_COLOUR)"
+
+#%.o: %.c
+#	echo $@ $<
+#	$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	@make clean -s -C $(LIBFT_DIR)
