@@ -5,23 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 19:41:11 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/07/31 19:52:40 by gade-oli         ###   ########.fr       */
+/*   Created: 2023/08/01 13:35:33 by gade-oli          #+#    #+#             */
+/*   Updated: 2023/08/01 14:20:31 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	push_swap()
+/**
+ * given the first element of the stack, prints through the stdout the whole stack
+ */
+void	print_stack(t_stack *stack)
 {
-	char *instr;
-
-	instr = "sa";
-	ft_putstr_fd(instr, STDOUT_FILENO);
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		ft_putstr_fd(stack->content, STDOUT_FILENO);
+		ft_putstr_fd("\n", STDOUT_FILENO);
+		stack = stack->next;
+	}
 }
 
 int main()
 {
-	push_swap();
+	t_stack	**stack;
+	t_stack *stacked;
+	int i;
+
+	stack = malloc(sizeof(t_stack *) * 5);
+	i = 0;
+	while (i < 5)
+	{
+		stacked = ft_stnew(&i);
+		if (!i)
+			*stack = stacked;
+		else
+			ft_stpush(stack, stacked);
+		i++;
+	}
+	print_stack(*stack);
 	return 0;
 }

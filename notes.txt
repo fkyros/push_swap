@@ -13,3 +13,11 @@ TO-DO:
 - 
 
 https://www.youtube.com/watch?v=OaG81sDEpVk 13:30
+
+------------------------------------------------------------------------
+
+Makefiles are a set of rules with the following format
+
+target … : prerequisites …
+        recipe
+        …

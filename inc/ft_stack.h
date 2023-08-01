@@ -6,12 +6,14 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:59:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/08/01 12:41:19 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:58:48 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STACK_H
 # define FT_STACK_H
+
+#include <stdlib.h>
 
 # ifndef SUCCESS
 #  define SUCCESS 0

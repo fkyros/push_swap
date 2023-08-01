@@ -5,29 +5,31 @@ COLOUR_BLUE =\033[1;34m
 NO_COLOUR =\033[0m
 
 CC      =   gcc
-CFLAGS  =   -Wall -Wextra -Werror
+CFLAGS  =   -Wall -Wextra -Werror -g
 
 #push_swap---------------------------------------------------
 
 NAME = push_swap
 
-SRC = src/push_swap.c
+SRC = src/push_swap.c \
+	  src/stack/ft_stack.c
 
 OBJS = $(SRC.c:.o)
 
 #libft-------------------------------------------------------
 
-LIBFT_DIR = ./libft/
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 #recipes-----------------------------------------------------
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(SRC)
 	@echo "$(COLOUR_BLUE)compiling libft!$(NO_COLOUR)"
 	@make -s -C $(LIBFT_DIR)
 	@echo "$(COLOUR_BLUE)compiling push_swap!$(NO_COLOUR)"
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME)
 	@echo "$(COLOUR_GREEN)compiled!$(NO_COLOUR)"
 
 #%.o: %.c

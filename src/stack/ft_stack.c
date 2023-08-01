@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:20:16 by gade-oli          #+#    #+#             */
-/*   Updated: 2023/08/01 12:52:12 by gade-oli         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:58:57 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_stack	*ft_stpeek(t_stack **stack)
  */
 int	ft_stpop(t_stack **stack)
 {
-	t_stack	*aux;
+	t_stack	**aux;
 
 	if (!stack)
 		return (FAIL);
@@ -80,8 +80,8 @@ int	ft_stpop(t_stack **stack)
  */
 int	ft_stpush(t_stack **stack, t_stack *new_stacked)
 {
-	if (!stack || !new_stack)
+	if (!stack || !new_stacked)
 		return (FAIL);
-	new_stack->next = *stack;
+	new_stacked->next = *stack;
 	return (SUCCESS);
 }
