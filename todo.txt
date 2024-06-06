@@ -1,0 +1,5 @@
+- funciones stack
+	- 1º stack, 2º contenido
+	- que no reciban contenido x puntero, sino int
+
+- recover test/ :((
