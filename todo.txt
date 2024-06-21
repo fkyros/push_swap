@@ -1,5 +1,4 @@
-- funciones stack
-	- 1º stack, 2º contenido
-	- que no reciban contenido x puntero, sino int
-
-- recover test/ :((
+- input
+	- acepta + y -
+	- comprobar que solo son caracteres numericos (y signos)
+	- comprobar que no me pasen "-2- 4" y cosas asi 

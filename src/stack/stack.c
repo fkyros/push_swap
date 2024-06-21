@@ -6,13 +6,13 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:46:48 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/06/06 20:03:02 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/06/21 15:45:56 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-t_stack	*stack_new(void *content)
+t_stack	*stack_new(int content)
 {
 	t_stack	*new;
 
@@ -37,7 +37,7 @@ int size(t_stack *stack)
 	return (res);
 }
 
-t_stack	*push(void *content, t_stack *stack)
+t_stack	*push(t_stack *stack, int content)
 {
 	t_stack	*new;
 
@@ -49,12 +49,17 @@ t_stack	*push(void *content, t_stack *stack)
 
 t_stack	*pop(t_stack *stack)
 {
+	t_stack	*below;
+
 	if (stack == NULL)
 		return (NULL);
-	return (stack->below);
+	below = stack->below;
+	free(stack);
+	return (below);
 }
 
-t_stack	*peek(t_stack *stack)
+int	peek(t_stack *stack)
 {
 	return (stack->content);
 }
+
