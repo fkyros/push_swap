@@ -1,4 +1,0 @@
-- input
-	- acepta + y -
-	- comprobar que solo son caracteres numericos (y signos)
-	- comprobar que no me pasen "-2- 4" y cosas asi 

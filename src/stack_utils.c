@@ -6,27 +6,26 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 14:15:23 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/06/21 16:30:40 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:27:41 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
-#include <stdio.h>
+#include "../inc/push_swap.h"
 
 void	print_stack(t_stack *stack)
 {
 	int	i;
 
 	i = 0;
-	printf("-----------------------\n");
+	ft_printf("-----------------------\n");
 	while (stack->below != NULL)
 	{
-		printf("stack[%d] = %d\n", i, stack->content);
+		ft_printf("stack[%d] = %d\n", i, stack->content);
 		stack = stack->below;
 		i++;
 	}
-	printf("stack[%d] = %d\n", i, stack->content);
-	printf("stack[%d] = NULL\n", i + 1);
+	ft_printf("stack[%d] = %d\n", i, stack->content);
+	ft_printf("stack[%d] = NULL\n", i + 1);
 }
 
 void	free_stack(t_stack *stack)

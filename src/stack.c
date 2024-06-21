@@ -6,11 +6,11 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:46:48 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/06/21 15:45:56 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:27:12 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 t_stack	*stack_new(int content)
 {

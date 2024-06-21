@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/06/21 15:50:08 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/06/21 18:40:25 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,36 +28,38 @@ CFLAGS = -Wall -Wextra -Werror -g
 LIBFT_DIR = megalibft/
 LIBFT = $(LIBFT_DIR)megalibft.a
 
-SRC = src/main.c src/stack/stack.c src/stack/sp.c
+SRC = src/main.c src/stack.c src/movements.c src/stack_utils.c src/create_stack.c
 
 BIN = $(SRC:src/%.c=bin/%.o)
 
 #recipes---------------------------------------------------------
 
 all:	$(NAME)
-	@echo $(GREEN)"$(NAME) compiled!"$(RESET)
+
+$(LIBFT):
+	@echo $(BLUE)"compiling libft"$(RESET)
+	@make --directory=$(LIBFT_DIR) 
 
 bin/%.o: src/%.c
 	@echo $(BLUE)"compiling binaries..."$(RESET)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(LIBFT):
-	@echo $(BLUE)"compiling libft"$(RESET)
-	@make --directory=$(LIBFT_DIR) all
-
-$(NAME):	$(LIBFT) $(BIN)
-	$(CC) $(CFLAGS) $(LIBFT) $(BIN) -o $(NAME)
+$(NAME): $(LIBFT) $(BIN)
+	$(CC) $(CFLAGS) $(BIN) $(LIBFT) -o $@
+	@echo $(GREEN)"$(NAME) compiled!"$(RESET)
 
 clean:
-	@echo $(RED)"deleting binaries"$(RESET)
+	@make clean --directory=$(LIBFT_DIR) 
 	rm -rf $(BIN)
+	@echo $(RED)"binaries deleted"$(RESET)
 
 fclean: clean
-	@echo $(RED)"$(NAME) deleted!"$(RESET)
+	@make fclean --directory=$(LIBFT_DIR) 
 	rm -rf $(NAME)
+	@echo $(RED)"$(NAME) deleted!"$(RESET)
 
-re:	fclean re
+re:	fclean all
 
 .PHONY: all clean fclean re
 
