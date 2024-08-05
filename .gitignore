@@ -1,0 +1,4 @@
+*.o
+bin/
+megalibft.a
+push_swap
