@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/05 22:21:25 by gade-oli         ###   ########.fr       */
+/*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
+/*   Updated: 2024/08/05 22:19:53 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../megalibft/libft.h"
+#include "../inc/push_swap.h"
 
-//parser.c
-t_list	*parse_numbers(int argc, char **argv);
+void	swap(t_list **stack, char name)
+{
+	t_list	*first;
+	t_list	*second;
+	int	aux;
 
-//utils.c
-void	print_stack(t_list **a);
-
-//is_sorted.c
-int		is_sorted(t_list **stack);
-
-//movements,c
-void	swap(t_list **stack, char name);
+	if (ft_lstsize(*stack) < 2)
+		return ;
+	first = *stack;
+	second = first->next;
+	aux = second->content;
+	second->content = first->content;
+	first->content = aux;
+	write(STDIN_FILENO, "s", 1);
+	write(STDIN_FILENO, &name, 1);
+	write(STDIN_FILENO, "\n", 1);
+}

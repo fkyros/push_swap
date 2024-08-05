@@ -1,3 +1,6 @@
 - norminette libft.h y main.c
-- implement push_swap stack movements with t_list
+- delete megalibft as submodule <----
+
+- check for duplicate numbers
+- implement push_swap stack movements with t_list <---
 - implement k-sort /chamber algo

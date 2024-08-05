@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/08/05 20:44:50 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/08/05 22:24:42 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 LIBFT_DIR = megalibft/
 LIBFT = $(LIBFT_DIR)megalibft.a
 
-SRC = src/main.c src/parser.c src/utils.c src/is_sorted.c 
+SRC = src/main.c src/parser.c src/utils.c src/is_sorted.c src/movements.c
 
 BIN = $(SRC:src/%.c=bin/%.o)
 
@@ -62,3 +62,8 @@ fclean: clean
 re:	fclean all
 
 .PHONY: all clean fclean re
+
+#BORRAR: tests-------------------------------------------
+
+movements_test: $(LIBFT)
+	$(CC) $(CFLAGS) src/parser.c src/utils.c src/is_sorted.c src/movements.c test/movements_test.c $(LIBFT)
