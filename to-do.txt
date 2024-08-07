@@ -1,5 +1,4 @@
-- norminette libft.h y main.c
-- delete megalibft as submodule <----
+- norminette 
 
 - check for duplicate numbers
 - implement push_swap stack movements with t_list <---
