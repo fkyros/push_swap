@@ -1,0 +1,3 @@
+movements
+- push a stack vacio
+- swap un stack de menos de dos 

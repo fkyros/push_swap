@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   double_movements.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/07 18:22:45 by gade-oli         ###   ########.fr       */
+/*   Created: 2024/08/07 17:22:19 by gade-oli          #+#    #+#             */
+/*   Updated: 2024/08/07 18:32:04 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../megalibft/libft.h"
+#include "../inc/push_swap.h"
 
-//parser.c
-t_list	*parse_numbers(int argc, char **argv);
-
-//utils.c
-void	print_stack(t_list **stack);
-int	has_repeated(t_list **stack);
-
-//is_sorted.c
-int		is_sorted(t_list **stack);
-
-//movements,c
-void	swap(t_list **stack, char name, int write);
-void	push(t_list **stack, int value, char name);
+void	ss(t_stack **stack_a, t_stack **b)
+{
+	swap(stack_a, 'a', 0);
+	swap(stack_b, 'b', 0);
+	write(STDOUT_FILENO, "ss\n", 3);
+}

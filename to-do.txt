@@ -1,5 +1,4 @@
 - norminette 
 
-- check for duplicate numbers
 - implement push_swap stack movements with t_list <---
 - implement k-sort /chamber algo
