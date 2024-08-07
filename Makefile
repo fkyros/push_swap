@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/08/05 22:24:42 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/08/07 15:48:56 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,3 +67,4 @@ re:	fclean all
 
 movements_test: $(LIBFT)
 	$(CC) $(CFLAGS) src/parser.c src/utils.c src/is_sorted.c src/movements.c test/movements_test.c $(LIBFT)
+	./a.out
