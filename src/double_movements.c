@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 17:22:19 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/13 20:50:00 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:14:13 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,16 @@ void	ss(t_stack **stack_a, t_stack **b)
 	write(STDOUT_FILENO, "ss\n", 3);
 }
 
-void	ss(t_stack **stack_a, t_stack **b)
+void	rr(t_stack **stack_a, t_stack **b)
 {
 	rotate(stack_a, 'a', 0);
 	rotate(stack_b, 'b', 0);
 	write(STDOUT_FILENO, "rr\n", 3);
+}
+
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	reverse_rotate(stack_a, 'a', 0);
+	reverse_rotate(stack_b, 'b', 0);
+	write(STDOUT_FILENO, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/07 18:22:45 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:57:50 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,4 @@ int		is_sorted(t_list **stack);
 
 //movements,c
 void	swap(t_list **stack, char name, int write);
-void	push(t_list **stack, int value, char name);
+void	push(t_list **from, t_list **to, char to_name);

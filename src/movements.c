@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/13 20:49:23 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:12:53 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * swaps the order of the first two elements of the given stack
  * doesnt do anything if the stack has less than two items
  */
-void	swap(t_list **stack, char name, int write)
+void	swap(t_list **stack, char name, int output)
 {
 	t_list	*first;
 	t_list	*second;
@@ -31,7 +31,7 @@ void	swap(t_list **stack, char name, int write)
 	aux = second->content;
 	second->content = first->content;
 	first->content = aux;
-	if (write)
+	if (output)
 	{
 		write(STDIN_FILENO, "s", 1);
 		write(STDIN_FILENO, &name, 1);
@@ -42,16 +42,17 @@ void	swap(t_list **stack, char name, int write)
 /**
  * adds to the stack a new node with the value and prints the movement
  */
-void	push(t_list **stack, int value, char name)
+void	push(t_list **from, t_list **to, char to_name)
 {
-	t_list	*new;
+	t_list	*aux;
 
-	new = ft_lstnew(value);
-	if (!new)
+	if (ft_lstsize(*from) < 1)
 		return ;
-	ft_lstadd_front(stack, new);
+	aux = *from;
+	*from = aux->next;
+	ft_lstadd_front(to, aux);
 	write(STDIN_FILENO, "p", 1);
-	write(STDIN_FILENO, &name, 1);
+	write(STDIN_FILENO, &to_name, 1);
 	write(STDIN_FILENO, "\n", 1);
 }
 
@@ -59,16 +60,33 @@ void	push(t_list **stack, int value, char name)
  * the first element becomes the last one
  * if the stack has more than one element
  */
-void	rotate(t_list **stack, char name. int write)
+void	rotate(t_list **stack, char name, int output)
 {
 	t_list	*aux;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	aux = *stack;
-	*stack = *stack->next
+	*stack = aux->next;
 	ft_lstadd_back(stack, aux);
-	if (write)
+	if (output)
+	{
+		write(STDIN_FILENO, "r", 1);
+		write(STDIN_FILENO, &name, 1);
+		write(STDIN_FILENO, "\n", 1);
+	}
+}
+
+void	reverse_rotate(t_list **stack, char name, int output)
+{
+	t_list	*last;
+
+	if (ft_lstsize(*stack) < 2)
+		return ;
+	last = ft_last(*stack);
+	ft_lstadd_front(stack, ft_lstnew(last->content));
+	ft_lstdelone(last);
+	if (output)
 	{
 		write(STDIN_FILENO, "r", 1);
 		write(STDIN_FILENO, &name, 1);

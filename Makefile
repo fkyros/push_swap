@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/08/07 15:48:56 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/08/20 18:14:39 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 LIBFT_DIR = megalibft/
 LIBFT = $(LIBFT_DIR)megalibft.a
 
-SRC = src/main.c src/parser.c src/utils.c src/is_sorted.c src/movements.c
+SRC = src/main.c src/parser.c src/utils.c src/is_sorted.c src/movements.c src/double_movements.c src/double_movements.c
 
 BIN = $(SRC:src/%.c=bin/%.o)
 
