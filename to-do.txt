@@ -1,4 +1,10 @@
+- fix push movement as subject
+- detect over INT_MIN and INT_MAX
+- implement movement tests in one file
+	- push
+	- rotate
+	- reverse_rotate
+	- double_movements basic
+- implement k-sort /chamber algo -----> github
 - norminette 
-
-- implement push_swap stack movements with t_list <---
-- implement k-sort /chamber algo
+- psegura test // psapio line
