@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:38:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/05 21:56:46 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:54:46 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
  * 	it checks for 0 because ft_atoi returns 0 if the 
  * 	original parameter was not a valid number
  */
-int	input_not_valid(int content, char *original)
+int	input_not_valid(long content, char *original)
 {
-	if (content == 0 && ft_strcmp(original, "0") != 0)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (1);
-	}
+	if ((content == 0 && ft_strcmp(original, "0") != 0) ||
+		(content > INT_MAX || content < INT_MIN))
+		return (print_error());
 	return (0);
 }
 
@@ -34,7 +32,7 @@ int	input_not_valid(int content, char *original)
  */
 t_list	*parse_numbers(int argc, char **argv)
 {
-	int		content;
+	long		content;
 	int		i;
 	t_list	*stack;
 
@@ -52,7 +50,7 @@ t_list	*parse_numbers(int argc, char **argv)
 			ft_lstclear(&stack);
 			return (NULL);
 		}
-		ft_lstadd_front(&stack, ft_lstnew(content));
+		ft_lstadd_front(&stack, ft_lstnew((int)content));
 		i--;
 	}
 	return (stack);

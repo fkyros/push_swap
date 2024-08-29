@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:53:27 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/05 21:59:30 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:04:54 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_atoi(const char *nptr);
+long int	ft_atoi(const char *nptr);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

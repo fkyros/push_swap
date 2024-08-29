@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/27 19:34:00 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:00:25 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../megalibft/libft.h"
+# include <limits.h>
 
 //parser.c
 t_list	*parse_numbers(int argc, char **argv);
@@ -21,6 +22,7 @@ t_list	*parse_numbers(int argc, char **argv);
 //utils.c
 void	print_stack(t_list **stack);
 int	has_repeated(t_list **stack);
+int	print_error();
 
 //is_sorted.c
 int		is_sorted(t_list **stack);

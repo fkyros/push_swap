@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/07 16:03:34 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:59:34 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ int	has_repeated(t_list **stack)
 		iter = iter->next;
 	}
 	return (0);
+}
+
+int	print_error()
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	return (1);
 }

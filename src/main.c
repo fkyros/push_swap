@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/20 18:02:36 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:03:36 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int	main(int argc, char **argv)
 	stack_a = parse_numbers(argc, argv);
 	if (!stack_a)
 		return (1);
-	if (is_sorted(&stack_a) || has_repeated(&stack_a))
+	if (has_repeated(&stack_a))
+		return (print_error());
+	if (is_sorted(&stack_a))
 		return (1);
 	//k-sort
 	
