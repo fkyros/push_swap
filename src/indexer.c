@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   indexer.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/04 20:29:48 by gade-oli         ###   ########.fr       */
+/*   Created: 2024/09/04 21:03:21 by gade-oli          #+#    #+#             */
+/*   Updated: 2024/09/04 21:37:26 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-#include <stdio.h> //quitar!!
-int	main(int argc, char **argv)
+void	indexer(t_list *stack, int *array, int size)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	int	i;
+	int	j;
+	int	flag;
 
-	stack_a = NULL;
-	stack_b = ft_lstnew(2);
-	if (argc <= 1)
-		return (1);
-	stack_a = parse_numbers(argc, argv);
-	if (!stack_a)
-		return (1);
-	if (has_repeated(&stack_a))
-		return (print_error());
-	if (is_sorted(&stack_a))
-		return (1);
-	//k-sort
-	
-	print_stack(&stack_a);
-
-	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
-	return (0);
+	flag = 0;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (!flag && j < size)
+		{
+			if (stack->content == array[j])
+			{
+				stack->index = i;
+				flag = 1;
+			}
+			j++;
+		}
+		flag = 0;
+		stack = stack->next;
+		i++;
+	}
 }

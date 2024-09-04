@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/29 16:00:25 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:18:25 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,12 @@ void	reverse_rotate(t_list **stack, char name, int output);
 void	ss(t_list **stack_a, t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
+
+//indexer.c
+void	indexer(t_list *stack, int *array, int size);
+
+//insertion_sort.c
+int	*list_to_array(t_list *list);
+void	insertion_sort(int *array, int size);
 
 #endif

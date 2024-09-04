@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:53:27 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/29 16:04:54 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/04 21:30:56 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,9 @@ void	ft_putnbr_fd(int n, int fd);
 
 typedef struct s_list
 {
-	int		content;
-	struct s_list	*next;
+	int			content;
+	unsigned int		index;
+	struct s_list		*next;
 }	t_list;
 
 t_list	*ft_lstnew(int content);
