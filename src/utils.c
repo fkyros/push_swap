@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 19:06:45 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 21:29:00 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ int	has_repeated(t_list **stack)
 	t_list	*iter_aux;
 	int	value;
 
+	if (!stack || !*stack)
+		return (0);
 	iter = *stack;
-	while (iter->next)
+	while (iter)
 	{
 		value = iter->content;
 		iter_aux = iter->next;
-		while (iter_aux->next)
+		while (iter_aux)
 		{
 			if (value == iter_aux->content)
 				return (1);

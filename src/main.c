@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 19:07:43 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 21:26:43 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,14 @@ int	main(int argc, char **argv)
 	int		*array;
 	unsigned int	size;
 
-	stack_a = NULL;
-	stack_b = ft_lstnew(2);
-	if (argc <= 1)
-		return (1);
 	stack_a = parse_numbers(argc, argv);
+	stack_b = NULL;
 	if (!stack_a)
 		return (1);
 	if (has_repeated(&stack_a))
-		return (print_error());
+		return (ft_lstclear(&stack_a), print_error());
 	if (is_sorted(&stack_a))
-		return (1);
+		return (ft_lstclear(&stack_a), 1);
 
 	size = ft_lstsize(stack_a);
 	array = list_to_array(stack_a);
@@ -46,11 +43,10 @@ int	main(int argc, char **argv)
 		small_sort(&stack_a, &stack_b, size);
 	else
 	{*/
-		ksort_range(&stack_a, &stack_b, size);
-		ksort_back_to_a(&stack_a, &stack_b, size);
+		//ksort_range(&stack_a, &stack_b, size);
+		//ksort_back_to_a(&stack_a, &stack_b, size);
 	//}
-	
-	print_stack(&stack_a);
+	//print_stack(&stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 	return (0);

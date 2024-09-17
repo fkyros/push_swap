@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 17:37:02 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:46:32 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 //parser.c
 t_list	*parse_numbers(int argc, char **argv);
+char	**get_input_as_char_matrix(int argc, char **argv);
 
 //utils.c
 void	print_stack(t_list **stack);

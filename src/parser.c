@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:38:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/29 16:54:46 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 21:21:39 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,39 @@ int	input_not_valid(long content, char *original)
 	return (0);
 }
 
+char	**get_input_as_char_matrix(int argc, char **argv)
+{
+	int	i;
+	char	*base;
+
+	base = ft_strdup(argv[1]);
+	if (!base)
+		return (NULL);
+	i = 2;
+	while (i < argc)
+	{
+		base = ft_strjoin((const char *)base, (const char *)" ");
+		base = ft_strjoin((const char *)base, (const char *)argv[i]);
+		if (!base)
+			return (NULL);
+		i++;
+	}
+	return (ft_split(base, ' '));
+}
+
+/*
+ * return the numbers of ints parsed from the input on the matrix
+ */
+int	get_number_of_numbers(char **matrix)
+{
+	int	res;
+
+	res = 0;
+	while (matrix[res])
+		res++;
+	return (res);
+}
+
 /**
  * given a stdin input of integers, returns the created stack
  * if malformed, returns NULL and prints Error
@@ -35,16 +68,20 @@ t_list	*parse_numbers(int argc, char **argv)
 	long		content;
 	int		i;
 	t_list	*stack;
+	char		**num_matrix;
 
-	i = argc - 1;
-	content = ft_atoi(argv[i]);
+	num_matrix = get_input_as_char_matrix(argc, argv);
+	if (!num_matrix)
+		return (NULL);
+	i = get_number_of_numbers(num_matrix) - 1;
+	content = ft_atoi(num_matrix[i]);
 	if (input_not_valid(content, argv[i]))
 		return (NULL);
 	i--;
 	stack = ft_lstnew(content);
-	while (i >= 1)
+	while (i >= 0)
 	{
-		content = ft_atoi(argv[i]);
+		content = ft_atoi(num_matrix[i]);
 		if (input_not_valid(content, argv[i]))
 		{
 			ft_lstclear(&stack);
