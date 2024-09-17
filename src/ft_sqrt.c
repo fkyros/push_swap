@@ -6,7 +6,7 @@
 /*   By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 17:48:31 by gade-oli          #+#    #+#             */
-/*   Updated: 2022/07/28 17:55:27 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:41:45 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,3 @@ int	ft_sqrt(int nb)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%d\n", ft_sqrt(25));
-}*/

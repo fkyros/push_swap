@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/09/04 21:18:54 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/09/17 17:31:26 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ SRC = src/main.c \
 	src/movements.c \
 	src/double_movements.c \
 	src/indexer.c \
-	src/insertion_sort.c	
+	src/insertion_sort.c \
+	src/ft_sqrt.c \
+	src/sort_stack.c \
+	src/sort_utils.c
 
 BIN = $(SRC:src/%.c=bin/%.o)
 

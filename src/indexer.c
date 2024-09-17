@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 21:03:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/04 21:37:26 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:06:53 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	indexer(t_list *stack, int *array, int size)
 		{
 			if (stack->content == array[j])
 			{
-				stack->index = i;
+				stack->index = j;
 				flag = 1;
 			}
 			j++;

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/29 15:59:34 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:06:45 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ void	print_stack(t_list **stack)
 	while (iter)
 	{
 		ft_printf("stack[%d] = %d\n", i, iter->content);
+		ft_printf("\t->index = %d\n", iter->index);
 		iter = iter->next;
 		i++;
 	}
-	ft_printf("stack[%d] = NULL\n", i);
+	ft_printf("stack[%d] = NULL\n\n", i);
 }
 
 int	has_repeated(t_list **stack)
