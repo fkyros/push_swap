@@ -6,11 +6,23 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 21:29:00 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:45:14 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+t_list	*ft_lstclone(t_list *node)
+{
+	t_list	*res;
+
+	if (!node)
+		return (NULL);
+	res = ft_lstnew(node->content);
+	res->index = node->index;
+	ft_lstdelone(node);
+	return (res);
+}
 
 void	print_stack(t_list **stack)
 {

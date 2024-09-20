@@ -1,16 +1,13 @@
-- parse numbers with quotas is done ?????????????????????????????????????????????????? -> use checker!!!
 - implement movement tests in one file
 	- push
 	- rotate
 	- reverse_rotate
 	- double_movements basic
+
 - implement k-sort /chamber algo -----> github
 - small algorithm for small numbers 
 - norminette 
 - psegura test // psapio line
+- check leaks!!!
+
 https://42-cursus.gitbook.io/guide/rank-02/push_swap/building-the-thing
-
-
-make work:
-./push_swap 3 03 > same number!!
-./push_swap "3 4 6 8 9 74 -56 +495" -> number as lists

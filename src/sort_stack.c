@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 19:28:46 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 19:42:33 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:06:00 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	small_sort(t_list **stack_a, t_list **stack_b, int size)
  * ir por chunks. 
  *
  */
-void	ksort_range(t_list **stack_a, t_list **stack_b, unsigned int size)
+void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	range;
 
 	i = 0;
 	range = ft_sqrt(size) * 1.4;
-	while ((*stack_a))
+	while (*stack_a)
 	{
 		if ((*stack_a)->index <= i)
 		{
@@ -51,7 +51,6 @@ void	ksort_range(t_list **stack_a, t_list **stack_b, unsigned int size)
 		}
 		else
 			rotate(stack_a, 'a', 1);
-		print_stack(stack_a);
 	}
 }
 
@@ -66,12 +65,14 @@ void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, int size)
 		rrb_count = (size + 3) - rb_count;
 		if (rb_count <= rrb_count)
 		{
-			while ((*stack_b)->index != (unsigned int) size - 1)
+			while ((*stack_b)->index != (unsigned int) size - 1
+					&& ft_lstsize(*stack_b) > 1)
 				rotate(stack_b, 'b', 1);
 		}
 		else
 		{
-			while ((*stack_b)->index != (unsigned int) size - 1)
+			while ((*stack_b)->index != (unsigned int) size - 1
+					&& ft_lstsize(*stack_b) > 1)
 				reverse_rotate(stack_b, 'b', 1);
 		}
 		push(stack_a, stack_b, 'a');

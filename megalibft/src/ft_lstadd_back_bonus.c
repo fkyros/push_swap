@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:53:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2022/12/09 13:13:56 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:10:34 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	it = *lst;
 	if (!it && new)
+	{
 		*lst = new;
+		new->next = NULL;
+	}
 	else if (it && new)
 	{
 		while (it->next)
 			it = it->next;
 		it->next = new;
+		new->next = NULL;
 	}
 }

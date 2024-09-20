@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 21:26:43 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:08:20 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ int	main(int argc, char **argv)
 	size = ft_lstsize(stack_a);
 	array = list_to_array(stack_a);
 	insertion_sort(array, size);
-	for (unsigned int i = 0; i < size; i++)
-		printf("%d ", array[i]);
+	//for (unsigned int i = 0; i < size; i++)
+	//	printf("%d ", array[i]);
 	indexer(stack_a, array, size);
 	free(array);
-	print_stack(&stack_a);
+	//print_stack(&stack_a);
 
 	/*
 	if (size < 12)
 		small_sort(&stack_a, &stack_b, size);
 	else
 	{*/
-		//ksort_range(&stack_a, &stack_b, size);
-		//ksort_back_to_a(&stack_a, &stack_b, size);
+		ksort_range_in_b(&stack_a, &stack_b, size);
+		ksort_back_to_a(&stack_a, &stack_b, size);
 	//}
 	//print_stack(&stack_a);
 	ft_lstclear(&stack_a);

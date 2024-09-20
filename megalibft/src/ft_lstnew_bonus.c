@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:37:51 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/05 18:52:41 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:45:24 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!res)
 		return (NULL);
 	res->content = content;
+	res->index = UINT_MAX;
 	res->next = NULL;
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/08/29 17:53:36 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:46:58 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,7 @@ void	reverse_rotate(t_list **stack, char name, int output)
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	last = ft_lstlast(*stack);
-	ft_lstadd_front(stack, ft_lstnew(last->content));
-	ft_lstdelone(last);
+	ft_lstadd_front(stack, ft_lstclone(last));
 	if (output)
 	{
 		write(STDIN_FILENO, "r", 1);
