@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 18:52:52 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:13:33 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "../megalibft/libft.h"
 # include <limits.h>
+
+//BORRAAAAAAAAAAAAAAAAAAAAAAAAAAR
+#include <stdio.h>
 
 //parser.c
 t_list	*parse_numbers(int argc, char **argv);
@@ -49,7 +52,7 @@ void	insertion_sort(int *array, int size);
 
 //sort_stack.c
 void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size);
-void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, int size);
+void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, unsigned int size);
 
 //sort_utils.c
 int	count_rotations(t_list **stack, unsigned int index);

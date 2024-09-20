@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 18:46:58 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 20:52:27 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	push(t_list **from, t_list **to, char to_name)
 	if (ft_lstsize(*from) < 1)
 		return ;
 	aux = *from;
-	*from = aux->next;
+	*from = (*from)->next;
 	ft_lstadd_front(to, aux);
 	write(STDIN_FILENO, "p", 1);
 	write(STDIN_FILENO, &to_name, 1);
