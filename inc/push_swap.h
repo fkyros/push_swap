@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 20:13:33 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 21:16:23 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**get_input_as_char_matrix(int argc, char **argv);
 void	print_stack(t_list **stack);
 int	has_repeated(t_list **stack);
 int	print_error();
-t_list	*ft_lstclone(t_list *node);
+t_list	*ft_lstclone(t_list **stack, t_list *node);
 
 //is_sorted.c
 int		is_sorted(t_list **stack);

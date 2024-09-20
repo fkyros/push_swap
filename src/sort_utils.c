@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:52 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 20:31:01 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/20 21:05:01 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ int	count_rotations(t_list **stack, unsigned int index)
 {
 	int	res;
 	int	flag;
+	t_list	*original;
 
 	res = 0;
 	flag = 0;
+	if (!*stack)
+		return (0);
+	original = *stack;
 	while (*stack && (*stack)->next && !flag)
 	{
 		if ((*stack)->index == index)
@@ -27,5 +31,6 @@ int	count_rotations(t_list **stack, unsigned int index)
 			res++;
 		*stack = (*stack)->next;
 	}
+	*stack = original;
 	return (res);
 }
