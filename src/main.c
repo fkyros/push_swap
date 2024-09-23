@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 19:08:20 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:06:27 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	int		*array;
 	unsigned int	size;
 
+	if (argc <= 1)
+		return (1);
 	stack_a = parse_numbers(argc, argv);
 	stack_b = NULL;
 	if (!stack_a)

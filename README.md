@@ -34,3 +34,8 @@ the factor 1.4 seems arbitrary to everyone (it is) but responds to
 whenever a value is on the range from 0,i then
 if its on the other, then ...
 -> CHECK!!!
+
+counting execution time
+```
+time ./push_swap 3 2 1
+```
