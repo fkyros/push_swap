@@ -1,13 +1,8 @@
-- implement movement tests in one file
-	- push
-	- rotate
-	- reverse_rotate
-	- double_movements basic
-
-- implement k-sort /chamber algo -----> github
 - small algorithm for small numbers 
 - norminette 
-- psegura test // psapio line
+- psegura test
 - check leaks!!!
 
 https://42-cursus.gitbook.io/guide/rank-02/push_swap/building-the-thing
+
+ARG=$(seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG

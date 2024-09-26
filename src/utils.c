@@ -75,3 +75,19 @@ int	print_error()
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (1);
 }
+
+int	ft_sqrt(int nb)
+{
+	int	i;
+
+	i = 0;
+	if (nb == 0 || nb == 1)
+		return (nb);
+	else if (nb >= 2)
+	{
+		while (i * i < nb)
+			i++;
+		return (i);
+	}
+	return (0);
+}

@@ -12,8 +12,6 @@
 
 #include "../inc/push_swap.h"
 
-//TODO: better error control returning int?
-
 /**
  * swaps the order of the first two elements of the given stack
  * doesnt do anything if the stack has less than two items

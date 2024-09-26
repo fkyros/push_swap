@@ -34,3 +34,17 @@ int	count_rotations(t_list **stack, unsigned int index)
 	*stack = original;
 	return (res);
 }
+
+int	is_sorted(t_list **stack)
+{
+	t_list	*iter;
+
+	iter = *stack;
+	while (iter->next)
+	{
+		if (!(iter->content < iter->next->content))
+			return (0);
+		iter = iter->next;
+	}
+	return (1);
+}

@@ -54,3 +54,29 @@ void	insertion_sort(int *array, int size)
 		i++;
 	}
 }
+
+void	indexer(t_list *stack, int *array, int size)
+{
+	int	i;
+	int	j;
+	int	flag;
+
+	flag = 0;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (!flag && j < size)
+		{
+			if (stack->content == array[j])
+			{
+				stack->index = j;
+				flag = 1;
+			}
+			j++;
+		}
+		flag = 0;
+		stack = stack->next;
+		i++;
+	}
+}

@@ -31,12 +31,9 @@ LIBFT = $(LIBFT_DIR)megalibft.a
 SRC = src/main.c \
 	src/parser.c \
 	src/utils.c \
-	src/is_sorted.c \
 	src/movements.c \
 	src/double_movements.c \
-	src/indexer.c \
 	src/insertion_sort.c \
-	src/ft_sqrt.c \
 	src/sort_stack.c \
 	src/sort_utils.c
 

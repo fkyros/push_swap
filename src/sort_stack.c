@@ -25,6 +25,17 @@ void	small_sort(t_list **stack_a, t_list **stack_b, int size)
 	if (size < 12)*/
 }
 
+void	sort_stack(t_list **stack_a, t_list **stack_b, unsigned int size)
+{
+	if (size == 2)
+		swap(stack_a, 'a', 1);
+	else
+	{
+		ksort_range_in_b(stack_a, stack_b, size);
+		ksort_back_to_a(stack_a, stack_b, size);
+	}
+}
+
 /*
  * ir por chunks. 
  *
@@ -41,7 +52,10 @@ void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 		if ((*stack_a)->index <= i)
 		{
 			push(stack_a, stack_b, 'b');
-			rotate(stack_b, 'b', 1);
+			if (*stack_a && (*stack_a)->index > i + range)
+				rrr(stack_a, stack_b);
+			else
+				rotate(stack_b, 'b', 1);
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
