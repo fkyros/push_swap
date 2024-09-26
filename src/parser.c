@@ -6,11 +6,12 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:38:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/17 21:21:39 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/26 19:55:06 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include <stdio.h>
 
 /**
  * prints "Error\n" on stderr if the input does not have an integer
@@ -75,14 +76,14 @@ t_list	*parse_numbers(int argc, char **argv)
 		return (NULL);
 	i = get_number_of_numbers(num_matrix) - 1;
 	content = ft_atoi(num_matrix[i]);
-	if (input_not_valid(content, argv[i]))
+	if (input_not_valid(content, argv[i + 1]))
 		return (NULL);
 	i--;
 	stack = ft_lstnew(content);
 	while (i >= 0)
 	{
 		content = ft_atoi(num_matrix[i]);
-		if (input_not_valid(content, argv[i]))
+		if (input_not_valid(content, argv[i + 1]))
 		{
 			ft_lstclear(&stack);
 			return (NULL);
