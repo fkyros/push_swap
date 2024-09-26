@@ -2,6 +2,12 @@
 
 ordering numbers with two stacks and limited special operations
 
+## visualize
+
+```
+python3 pswapviz.py -p ./push_swap -s 24
+```
+
 ## yea, k-sort algorithm
 
 tl;dr
