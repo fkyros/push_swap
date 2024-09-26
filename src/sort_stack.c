@@ -34,7 +34,6 @@ void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 	unsigned int	i;
 	unsigned int	range;
 
-//	print_stack(stack_a);
 	i = 0;
 	range = ft_sqrt(size) * 1.4;
 	while (*stack_a)
@@ -53,7 +52,6 @@ void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 		else
 			rotate(stack_a, 'a', 1);
 	}
-//	printf("FIN 1: stack_a vacio\n");
 }
 
 void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, unsigned int size)
@@ -65,11 +63,6 @@ void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, unsigned int size)
 	i = size - 1;
 	while (i >= 0)
 	{
-		/*printf("STACK_A:\n");
-		print_stack(stack_a);
-		printf("STACK_B:\n");
-		print_stack(stack_b);*/
-
 		rb_count = count_rotations(stack_b, i);
 		rrb_count = i + 1 - rb_count;
 		if (rb_count <= rrb_count)
@@ -85,10 +78,4 @@ void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, unsigned int size)
 		push(stack_b, stack_a, 'a');
 		i--;
 	}
-	/*
-		printf("STACK_A:\n");
-		print_stack(stack_a);
-		printf("STACK_B:\n");
-		print_stack(stack_b);
-		*/
 }

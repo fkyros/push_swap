@@ -33,9 +33,9 @@ void	swap(t_list **stack, char name, int output)
 	first->content = aux;
 	if (output)
 	{
-		write(STDIN_FILENO, "s", 1);
-		write(STDIN_FILENO, &name, 1);
-		write(STDIN_FILENO, "\n", 1);
+		write(STDOUT_FILENO, "s", 1);
+		write(STDOUT_FILENO, &name, 1);
+		write(STDOUT_FILENO, "\n", 1);
 	}
 }
 
@@ -51,9 +51,9 @@ void	push(t_list **from, t_list **to, char to_name)
 	aux = *from;
 	*from = (*from)->next;
 	ft_lstadd_front(to, aux);
-	write(STDIN_FILENO, "p", 1);
-	write(STDIN_FILENO, &to_name, 1);
-	write(STDIN_FILENO, "\n", 1);
+	write(STDOUT_FILENO, "p", 1);
+	write(STDOUT_FILENO, &to_name, 1);
+	write(STDOUT_FILENO, "\n", 1);
 }
 
 /**
@@ -71,9 +71,9 @@ void	rotate(t_list **stack, char name, int output)
 	ft_lstadd_back(stack, aux);
 	if (output)
 	{
-		write(STDIN_FILENO, "r", 1);
-		write(STDIN_FILENO, &name, 1);
-		write(STDIN_FILENO, "\n", 1);
+		write(STDOUT_FILENO, "r", 1);
+		write(STDOUT_FILENO, &name, 1);
+		write(STDOUT_FILENO, "\n", 1);
 	}
 }
 
@@ -90,8 +90,8 @@ void	reverse_rotate(t_list **stack, char name, int output)
 	ft_lstadd_front(stack, ft_lstclone(stack, last));
 	if (output)
 	{
-		write(STDIN_FILENO, "rr", 2);
-		write(STDIN_FILENO, &name, 1);
-		write(STDIN_FILENO, "\n", 1);
+		write(STDOUT_FILENO, "rr", 2);
+		write(STDOUT_FILENO, &name, 1);
+		write(STDOUT_FILENO, "\n", 1);
 	}
 }
