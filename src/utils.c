@@ -6,13 +6,16 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 21:17:18 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:26:29 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_list	*ft_lstclone(t_list **stack, t_list *node)
+/*
+ * looks for the last node in the stack, deletes it and gives the clone
+ */
+t_list	*ft_lstclone_and_delete_last(t_list **stack, t_list *node)
 {
 	t_list	*res;
 	t_list	*list;
@@ -22,9 +25,10 @@ t_list	*ft_lstclone(t_list **stack, t_list *node)
 	res = ft_lstnew(node->content);
 	res->index = node->index;
 	list = *stack;
-	while (list->next && list->next->content != node->content)
+	while (list && list->next && list->next->content != node->content)
 		list = list->next;
-	list->next = NULL;
+	if (list)
+		list->next = NULL;
 	ft_lstdelone(node);
 	return (res);
 }

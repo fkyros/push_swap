@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 21:23:48 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:29:19 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,19 @@ void	swap(t_list **stack, char name, int output)
 {
 	t_list	*first;
 	t_list	*second;
-	int	aux;
+	int	value_aux;
+	int	index_aux;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	first = *stack;
 	second = first->next;
-	aux = second->content;
+	value_aux = second->content;
+	index_aux = second->index;
 	second->content = first->content;
-	first->content = aux;
+	second->index = first->index;
+	first->content = value_aux;
+	first->index = index_aux;
 	if (output)
 	{
 		write(STDOUT_FILENO, "s", 1);
@@ -56,7 +60,6 @@ void	push(t_list **from, t_list **to, char to_name)
 
 /**
  * the first element becomes the last one
- * if the stack has more than one element
  */
 void	rotate(t_list **stack, char name, int output)
 {
@@ -81,11 +84,15 @@ void	rotate(t_list **stack, char name, int output)
 void	reverse_rotate(t_list **stack, char name, int output)
 {
 	t_list	*last;
+	t_list	*new_front;
+	t_list	*stack_iter;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
-	last = ft_lstlast(*stack);
-	ft_lstadd_front(stack, ft_lstclone(stack, last));
+	stack_iter = *stack;
+	last = ft_lstlast(stack_iter);
+	new_front = ft_lstclone_and_delete_last(stack, last);
+	ft_lstadd_front(stack, new_front);
 	if (output)
 	{
 		write(STDOUT_FILENO, "rr", 2);
