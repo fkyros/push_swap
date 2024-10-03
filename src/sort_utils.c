@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:52 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 21:05:01 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:20:28 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,20 @@ int	is_sorted(t_list **stack)
 		iter = iter->next;
 	}
 	return (1);
+}
+
+unsigned int	get_min_index(t_list **stack)
+{
+	unsigned int	res;
+	t_list		*it;
+
+	res = 99999999;
+	it = *stack;
+	while (it)
+	{
+		if (it->index < res)
+			res = it->index;
+		it = it->next;
+	}
+	return (res);
 }

@@ -1,9 +1,7 @@
-- small algorithm for small numbers 
-- norminette 
-- psegura test
 - check leaks!!!
-- delete tests
+- norminette 
+- pass psegura- test
 
-https://42-cursus.gitbook.io/guide/rank-02/push_swap/building-the-thing
-
-ARG=$(seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
+- bonus: checker
+- documentar solución en el README.md
+- grabar gif para el repo
