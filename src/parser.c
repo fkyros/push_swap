@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:38:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/26 19:55:06 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:04:20 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,36 @@ char	**get_input_as_char_matrix(int argc, char **argv)
 {
 	int	i;
 	char	*base;
+	char	*append;
+	char	**res;
 
-	base = ft_strdup(argv[1]);
+	base = ft_strdup(argv[1]); //MALLOC
 	if (!base)
 		return (NULL);
 	i = 2;
 	while (i < argc)
 	{
-		base = ft_strjoin((const char *)base, (const char *)" ");
-		base = ft_strjoin((const char *)base, (const char *)argv[i]);
+		append = ft_strjoin((const char *)base, (const char *)" "); //MALLOC
+		free(base);
+		if (!append)
+			return (NULL);
+		base = ft_strjoin((const char *)append, (const char *)argv[i]); //MALLOC
+		free(append);
 		if (!base)
 			return (NULL);
 		i++;
 	}
-	return (ft_split(base, ' '));
+	res = ft_split(base, ' '); //MALLOC
+	free(base);
+	if (!res)
+		return (NULL);
+	return (res);
 }
 
 /*
  * return the numbers of ints parsed from the input on the matrix
  */
-int	get_number_of_numbers(char **matrix)
+int	get_matrix_rows(char **matrix)
 {
 	int	res;
 
@@ -58,6 +68,21 @@ int	get_number_of_numbers(char **matrix)
 	while (matrix[res])
 		res++;
 	return (res);
+}
+
+void	free_matrix(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (!matrix || !matrix[0])
+		return ;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
 }
 
 /**
@@ -70,26 +95,34 @@ t_list	*parse_numbers(int argc, char **argv)
 	int		i;
 	t_list	*stack;
 	char		**num_matrix;
+	t_list	*new_node;
 
 	num_matrix = get_input_as_char_matrix(argc, argv);
 	if (!num_matrix)
 		return (NULL);
-	i = get_number_of_numbers(num_matrix) - 1;
+	i = get_matrix_rows(num_matrix) - 1;
 	content = ft_atoi(num_matrix[i]);
 	if (input_not_valid(content, argv[i + 1]))
 		return (NULL);
 	i--;
 	stack = ft_lstnew(content);
+	if (!stack)
+	{
+		free_matrix(num_matrix);
+		return (NULL);
+	}
 	while (i >= 0)
 	{
 		content = ft_atoi(num_matrix[i]);
-		if (input_not_valid(content, argv[i + 1]))
+		new_node = ft_lstnew((int)content);
+		if (input_not_valid(content, argv[i + 1]) || !new_node)
 		{
 			ft_lstclear(&stack);
 			return (NULL);
 		}
-		ft_lstadd_front(&stack, ft_lstnew((int)content));
+		ft_lstadd_front(&stack, new_node);
 		i--;
 	}
+	free_matrix(num_matrix);
 	return (stack);
 }
