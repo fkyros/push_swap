@@ -8,6 +8,24 @@ ordering numbers with two stacks and limited special operations
 python3 pswapviz.py -p ./push_swap -s 24
 ```
 
+## check it
+
+this wonderful line will get you 500 numbers (or as much as you want by changing the `tail` parameter) randomly sorted
+```
+seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '
+```
+
+throw it to the ckecher and get your own tester every time (s/o to psapio-)
+```
+ARG=$(seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
+```
+
+you can always test it with the [psegura-](https://github.com/PepeSegura/push_swap_Tester) tester which is also fire as well
+
+# how to survive this project
+
+patience, gdb and valgrind will be your best friends here
+
 ## yea, k-sort algorithm
 
 tl;dr

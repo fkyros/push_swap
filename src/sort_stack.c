@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:50:42 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/29 16:16:40 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/03 16:23:50 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@ void	small_sort(t_list **stack_a)
 	unsigned int	b;
 	unsigned int	c;
 
-	print_stack(stack_a);
 	if (is_sorted(stack_a))
 		return ;
 	aux = *(stack_a);
 	a = aux->index;
 	b = aux->next->index;
 	c = aux->next->next->index;
-	if (a > b && a < c)
+	if (a > b && a > c)
+		rotate(stack_a, 'a', 1);
+	else if (a > b && a < c)
 		swap(stack_a, 'a', 1);
-	else if (a > b && a > c)
-		reverse_rotate(stack_a, 'a', 1);
 	else if (b > a && b > c)
 		reverse_rotate(stack_a, 'a', 1);
 	else if (b > a && b > c)
