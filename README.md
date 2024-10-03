@@ -67,7 +67,7 @@ sorting for an small amount of values
 
 for 3 numbers:
 get a piece of paper and draw all the possible permutations of 3 numbers. yep, not many cases, and they can be solved with just one or two movements in place.
-//TODO: add a pic
+![sort3](pics/sort3.png)
 
 for 5 numbers:
 we will take advantage of the precious 3 number sorting algorithm we already made

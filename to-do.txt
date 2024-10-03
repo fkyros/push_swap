@@ -1,7 +1,7 @@
 - check leaks!!!
 - norminette 
 - pass psegura- test
-
 - bonus: checker
+
 - documentar solución en el README.md
 - grabar gif para el repo

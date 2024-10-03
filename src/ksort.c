@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 19:28:46 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/20 21:22:41 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/03 19:27:41 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 		{
 			push(stack_a, stack_b, 'b');
 			if (*stack_a && (*stack_a)->index > i + range)
-				rrr(stack_a, stack_b);
+				rr(stack_a, stack_b);
 			else
 				rotate(stack_b, 'b', 1);
 			i++;
