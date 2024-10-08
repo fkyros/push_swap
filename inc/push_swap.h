@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/08 17:31:42 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 18:00:06 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 //parser.c
 t_list			*parse_numbers(int argc, char **argv);
 char			**get_input_as_char_matrix(int argc, char **argv);
+int				input_not_valid(long content, char *original);
+int				get_matrix_rows(char **matrix);
 
 //utils.c
 t_list			*ft_lstclone_and_delete_last(t_list **stack, t_list *node);

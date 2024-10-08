@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/09/26 16:56:15 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/10/08 17:51:49 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RESET   = '\033[0;0m'
 #variables-------------------------------------------------------
 
 NAME = push_swap
+BONUS = checker
 
 CC = gcc
 
@@ -39,6 +40,10 @@ SRC = src/main.c \
 	src/sort_utils.c
 
 BIN = $(SRC:src/%.c=bin/%.o)
+
+SRC_BONUS = src/bonus/main_bonus.c
+
+BIN_BONUS = $(SRC_BONUS:src/bonus/%.c=bin/bonus/%.o)
 
 #recipes---------------------------------------------------------
 
@@ -69,7 +74,11 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re
+bonus:	$(LIBFT) $(BIN_BONUS)
+	$(CC) $(CFLAGS) $(BIN_BONUS) $(LIBFT) -o $@
+	@echo $(GREEN)"$(BONUS) compiled!"$(RESET)
+
+.PHONY: all clean fclean re bonus
 
 #BORRAR: tests-------------------------------------------
 
