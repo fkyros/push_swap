@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/29 17:29:19 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:34:15 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	swap(t_list **stack, char name, int output)
 {
 	t_list	*first;
 	t_list	*second;
-	int	value_aux;
-	int	index_aux;
+	int		value_aux;
+	int		index_aux;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;

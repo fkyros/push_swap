@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 20:06:39 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/29 17:26:29 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:03:25 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,27 @@ t_list	*ft_lstclone_and_delete_last(t_list **stack, t_list *node)
 	return (res);
 }
 
-void	print_stack(t_list **stack)
+void	*free_matrix(char **matrix)
 {
-	t_list	*iter;
-	int		i;
+	int	i;
 
 	i = 0;
-	iter = *stack;
-	while (iter)
+	if (!matrix || !matrix[0])
+		return (NULL);
+	while (matrix[i])
 	{
-		ft_printf("stack[%d] = %d\n", i, iter->content);
-		ft_printf("\t->index = %d\n", iter->index);
-		iter = iter->next;
+		free(matrix[i]);
 		i++;
 	}
-	ft_printf("stack[%d] = NULL\n\n", i);
+	free(matrix);
+	return (NULL);
 }
 
 int	has_repeated(t_list **stack)
 {
 	t_list	*iter;
 	t_list	*iter_aux;
-	int	value;
+	int		value;
 
 	if (!stack || !*stack)
 		return (0);
@@ -74,7 +73,7 @@ int	has_repeated(t_list **stack)
 	return (0);
 }
 
-int	print_error()
+int	print_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (1);

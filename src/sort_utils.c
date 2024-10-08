@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:52 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/03 17:20:28 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:38:07 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	count_rotations(t_list **stack, unsigned int index)
 {
-	int	res;
-	int	flag;
 	t_list	*original;
+	int		res;
+	int		flag;
 
 	res = 0;
 	flag = 0;
@@ -52,7 +52,7 @@ int	is_sorted(t_list **stack)
 unsigned int	get_min_index(t_list **stack)
 {
 	unsigned int	res;
-	t_list		*it;
+	t_list			*it;
 
 	res = 99999999;
 	it = *stack;

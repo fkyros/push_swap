@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:21 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/09/29 14:43:52 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:40:34 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	main(int argc, char **argv)
 {
 	t_list			*stack_a;
 	t_list			*stack_b;
-	int			*array;
-	unsigned int		size;
+	int				*array;
+	unsigned int	size;
 
 	if (argc <= 1)
 		return (1);
-	stack_a = parse_numbers(argc, argv); //CHECK LEAKS
+	stack_a = parse_numbers(argc, argv);
 	stack_b = NULL;
 	if (!stack_a)
 		return (1);

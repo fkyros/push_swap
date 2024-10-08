@@ -1,5 +1,3 @@
-- norminette 
-- pass psegura- test
 - bonus: checker
 
 - documentar solución en el README.md

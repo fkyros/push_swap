@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:50:42 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/03 17:51:15 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:36:03 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  */
 void	small_sort(t_list **stack_a)
 {
-	t_list		*aux;
+	t_list			*aux;
 	unsigned int	a;
 	unsigned int	b;
 	unsigned int	c;
@@ -67,9 +67,8 @@ void	medium_sort(t_list **stack_a, t_list **stack_b, int size)
 	{
 		push(stack_b, stack_a, 'a');
 		rotate(stack_a, 'a', 1);
-	}	
+	}
 }
-
 
 /**
  * algorithm chooser given the items on the list
