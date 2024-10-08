@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 17:38:29 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/03 20:04:20 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:27:46 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,9 @@ t_list	*parse_numbers(int argc, char **argv)
 	{
 		content = ft_atoi(num_matrix[i]);
 		new_node = ft_lstnew((int)content);
-		if (input_not_valid(content, argv[i + 1]) || !new_node)
+		if (input_not_valid(content, num_matrix[i]) || !new_node)
 		{
+			free_matrix(num_matrix);
 			ft_lstclear(&stack);
 			return (NULL);
 		}
