@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:47:50 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/10 19:49:12 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:29:54 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	print_result(t_list *stack_a, t_list *stack_b)
 		return (1);
 	}
 	ft_putstr_fd("OK\n", STDOUT_FILENO);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 	return (0);
 }
 
