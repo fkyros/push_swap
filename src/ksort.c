@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 19:28:46 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/03 19:27:41 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:10:32 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ void	ksort_range_in_b(t_list **stack_a, t_list **stack_b, unsigned int size)
 	{
 		if ((*stack_a)->index <= i)
 		{
-			push(stack_a, stack_b, 'b');
+			push(stack_a, stack_b, 'b', 1);
 			if (*stack_a && (*stack_a)->index > i + range)
-				rr(stack_a, stack_b);
+				rr(stack_a, stack_b, 1);
 			else
 				rotate(stack_b, 'b', 1);
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
 		{
-			push(stack_a, stack_b, 'b');
+			push(stack_a, stack_b, 'b', 1);
 			i++;
 		}
 		else
@@ -61,7 +61,7 @@ void	ksort_back_to_a(t_list **stack_a, t_list **stack_b, unsigned int size)
 			while ((*stack_b)->index != (unsigned int) i)
 				reverse_rotate(stack_b, 'b', 1);
 		}
-		push(stack_b, stack_a, 'a');
+		push(stack_b, stack_a, 'a', 1);
 		i--;
 	}
 }

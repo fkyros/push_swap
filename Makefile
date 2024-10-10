@@ -6,7 +6,7 @@
 #    By: gade-oli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 19:33:19 by gade-oli          #+#    #+#              #
-#    Updated: 2024/10/08 17:51:49 by gade-oli         ###   ########.fr        #
+#    Updated: 2024/10/10 19:20:13 by gade-oli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,15 @@ SRC = src/main.c \
 	src/ksort.c \
 	src/sort_stack.c \
 	src/sort_utils.c
-
 BIN = $(SRC:src/%.c=bin/%.o)
 
-SRC_BONUS = src/bonus/main_bonus.c
-
-BIN_BONUS = $(SRC_BONUS:src/bonus/%.c=bin/bonus/%.o)
+SRC_BONUS = src/checker_bonus.c \
+			src/movements.c \
+			src/double_movements.c \
+			src/parser.c \
+			src/sort_utils.c \
+			src/utils.c 
+BIN_BONUS = $(SRC_BONUS:src/%.c=bin/%.o)
 
 #recipes---------------------------------------------------------
 
@@ -64,24 +67,21 @@ $(NAME): $(LIBFT) $(BIN)
 
 clean:
 	@make clean --directory=$(LIBFT_DIR) 
-	rm -rf $(BIN)
+	rm -rf $(BIN) $(BIN_BONUS) .bonus
 	@echo $(RED)"binaries deleted"$(RESET)
 
 fclean: clean
 	@make fclean --directory=$(LIBFT_DIR) 
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(BONUS)
 	@echo $(RED)"$(NAME) deleted!"$(RESET)
 
 re:	fclean all
 
-bonus:	$(LIBFT) $(BIN_BONUS)
-	$(CC) $(CFLAGS) $(BIN_BONUS) $(LIBFT) -o $@
+bonus: .bonus
+
+.bonus: $(LIBFT) $(BIN_BONUS)
+	$(CC) $(CFLAGS) $(BIN_BONUS) $(LIBFT) -o $(BONUS)
 	@echo $(GREEN)"$(BONUS) compiled!"$(RESET)
+	@touch .bonus
 
 .PHONY: all clean fclean re bonus
-
-#BORRAR: tests-------------------------------------------
-
-movements_test: $(LIBFT)
-	$(CC) $(CFLAGS) src/parser.c src/utils.c src/is_sorted.c src/movements.c test/movements_test.c $(LIBFT)
-	./a.out

@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:39:52 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/08 16:38:07 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:36:50 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ unsigned int	get_min_index(t_list **stack)
 	unsigned int	res;
 	t_list			*it;
 
-	res = 99999999;
+	res = INT_MAX;
 	it = *stack;
 	while (it)
 	{

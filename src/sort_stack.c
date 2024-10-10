@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:50:42 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/08 16:36:03 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:51:26 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*
  * in-place sort for just three items in the stack
- * goal: max three moves for three elements
  */
 void	small_sort(t_list **stack_a)
 {
@@ -41,8 +40,7 @@ void	small_sort(t_list **stack_a)
 }
 
 /**
- * optimized small cases for required efficiency
- * goal: max twelve moves for five elements
+ * optimized five items case for required efficiency
  */
 void	medium_sort(t_list **stack_a, t_list **stack_b, int size)
 {
@@ -53,7 +51,7 @@ void	medium_sort(t_list **stack_a, t_list **stack_b, int size)
 	{
 		if ((*stack_a)->index >= 3)
 		{
-			push(stack_a, stack_b, 'b');
+			push(stack_a, stack_b, 'b', 1);
 			i++;
 		}
 		else
@@ -65,7 +63,7 @@ void	medium_sort(t_list **stack_a, t_list **stack_b, int size)
 		swap(stack_b, 'b', 1);
 	while (ft_lstsize(*stack_b) != 0)
 	{
-		push(stack_b, stack_a, 'a');
+		push(stack_b, stack_a, 'a', 1);
 		rotate(stack_a, 'a', 1);
 	}
 }
@@ -79,7 +77,7 @@ void	sort_stack(t_list **stack_a, t_list **stack_b, unsigned int size)
 		swap(stack_a, 'a', 1);
 	else if (size == 3)
 		small_sort(stack_a);
-	else if (size <= 10)
+	else if (size <= 5)
 		medium_sort(stack_a, stack_b, size);
 	else
 	{

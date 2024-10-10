@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:04:03 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/08 16:34:15 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:52:12 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	swap(t_list **stack, char name, int output)
 /**
  * moves the first element from the stack "from" to "to"
  */
-void	push(t_list **from, t_list **to, char to_name)
+void	push(t_list **from, t_list **to, char to_name, int output)
 {
 	t_list	*aux;
 
@@ -53,9 +53,12 @@ void	push(t_list **from, t_list **to, char to_name)
 	aux = *from;
 	*from = (*from)->next;
 	ft_lstadd_front(to, aux);
-	write(STDOUT_FILENO, "p", 1);
-	write(STDOUT_FILENO, &to_name, 1);
-	write(STDOUT_FILENO, "\n", 1);
+	if (output)
+	{
+		write(STDOUT_FILENO, "p", 1);
+		write(STDOUT_FILENO, &to_name, 1);
+		write(STDOUT_FILENO, "\n", 1);
+	}
 }
 
 /**

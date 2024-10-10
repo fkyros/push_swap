@@ -6,7 +6,7 @@
 /*   By: gade-oli <gade-oli@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:34:44 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/08 18:00:06 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 19:45:31 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 //parser.c
 t_list			*parse_numbers(int argc, char **argv);
-char			**get_input_as_char_matrix(int argc, char **argv);
-int				input_not_valid(long content, char *original);
-int				get_matrix_rows(char **matrix);
 
 //utils.c
 t_list			*ft_lstclone_and_delete_last(t_list **stack, t_list *node);
@@ -30,14 +27,14 @@ int				print_error(void);
 
 //movements.c
 void			swap(t_list **stack, char name, int output);
-void			push(t_list **from, t_list **to, char to_name);
+void			push(t_list **from, t_list **to, char to_name, int output);
 void			rotate(t_list **stack, char name, int output);
 void			reverse_rotate(t_list **stack, char name, int output);
 
 //double_movements.c
-void			ss(t_list **stack_a, t_list **stack_b);
-void			rr(t_list **stack_a, t_list **stack_b);
-void			rrr(t_list **stack_a, t_list **stack_b);
+void			ss(t_list **stack_a, t_list **stack_b, int output);
+void			rr(t_list **stack_a, t_list **stack_b, int output);
+void			rrr(t_list **stack_a, t_list **stack_b, int output);
 
 //insertion_sort.c
 int				*list_to_array(t_list *list);
