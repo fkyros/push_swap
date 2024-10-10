@@ -6,20 +6,11 @@
 /*   By: gade-oli <gade-oli@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:47:50 by gade-oli          #+#    #+#             */
-/*   Updated: 2024/10/10 20:29:54 by gade-oli         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:06:45 by gade-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-//idea:
-	//leer numeros por argv
-	//si input erroneo (no int, > o < que int, dupicados) -> "Error\n"
-	//crear stack_a con numeros
-	//ordenar numeros segun lo que lea por STDIN
-	//si leo instruccion mal formada -> "Error\n"
-	//si instrucciones validas y ordenan, y stack_b vacio -> "OK\n"
-	//si no ordena o stack_b con cosas -> "KO\n"
 
 int	valid_move(char *movement)
 {
@@ -79,6 +70,8 @@ int	print_result(t_list *stack_a, t_list *stack_b)
 {
 	if (!is_sorted(&stack_a) || ft_lstsize(stack_b))
 	{
+		ft_lstclear(&stack_a);
+		ft_lstclear(&stack_b);
 		ft_putstr_fd("KO\n", STDOUT_FILENO);
 		return (1);
 	}
@@ -90,10 +83,8 @@ int	print_result(t_list *stack_a, t_list *stack_b)
 
 int	free_and_return_error(t_list **stack_a, t_list **stack_b)
 {
-	if (stack_a)
-		ft_lstclear(stack_a);
-	if (stack_b)
-		ft_lstclear(stack_b);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 	return (print_error());
 }
 
@@ -103,6 +94,8 @@ int	main(int argc, char **argv)
 	t_list		*stack_b;
 	char		*movement;
 
+	if (argc <= 1)
+		return (1);
 	stack_b = NULL;
 	stack_a = parse_numbers(argc, argv);
 	if (!stack_a)
